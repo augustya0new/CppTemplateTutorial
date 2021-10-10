@@ -65,6 +65,7 @@ template <typename tuple> struct QuickSort {};
 template <>               struct QuickSort< tuple<  > > { typedef tuple<  > type; };
 template <typename T0>    struct QuickSort< tuple<T0> > { typedef tuple<T0> type; };
 template <typename Head, typename... Ts>
+//quick sort implementation
 struct QuickSort< tuple<Head, Ts...> > {
 	typedef typename Filter< Less<Head>, tuple<Ts...> >::type LeftElems;
 	typedef typename Filter< GE  <Head>, tuple<Ts...> >::type RightElems;
